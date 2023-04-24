@@ -42,16 +42,3 @@ for i in range(10000):
         print('Stationary distribution', s, 'reached in iteration', i)
         break
     aux = s
-
-Fi = [
-      [ 1.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
-      [ 0.7, 0.0, 0.3, 0.0, 0.0, 0.0 ],
-      [ 0.0, 0.7, 0.0, 0.3, 0.0, 0.0 ],
-      [ 0.0, 0.0, 0.7, 0.0, 0.3, 0.0 ],
-      [ 0.0, 0.0, 0.0, 0.7, 0.0, 0.3 ],
-      [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
-     ]
-
-b = np.zeros( 6 )
-
-print ( np.linalg.solve( Fi, b ) )
