@@ -45,8 +45,8 @@ class Knight():
 
 
 b = Board()
-k = Knight( 7, 7, b )
-iter = 1e6
+k = Knight( 4, 4, b )
+iter = 1e3
 
 for i in range( int(iter) ):
     k.execute_move()
