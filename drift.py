@@ -21,20 +21,25 @@ class Drift:
         self.M = 0
 
 avg_M = 0
+max_M = 0
 avg_num_positive = 0
 
-walk = Drift( 0.49 )
-
-iter = 1000000
+iter = 1e4
 threshold = -1000
 for i in range( int(iter) ):
+    walk = Drift( 0.45 )
     while walk.S > threshold:
         walk.step()
 
     avg_M += walk.M
     avg_num_positive += walk.num_positive
+    if walk.M > max_M: max_M = walk.M
+
+theoretical_M = walk.p / ( 1 - 2 * walk.p)
 
 avg_M /= iter
 avg_num_positive /= iter
-print( 'Average value of M after', iter, 'runs:', avg_M )
+print( 'Average empirical value of M after', int(iter), 'runs:', avg_M )
+print( 'Theoretical M =', round( theoretical_M, 4 ) )
+print( 'Highest M among all the walks:', max_M )
 print( 'Average number of positive steps before reaching S =', threshold,':', avg_num_positive )
