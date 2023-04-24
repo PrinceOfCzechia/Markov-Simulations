@@ -1,5 +1,5 @@
 # Markov-Simulations
-Numpy based simulations of Markov processes.
+Numpy based simulations of Markov processes. Since the point is to demonstrate mathematical phenomena, the code does not look after the user very much. The author presumes everyone knows that probabilities are in \[ 0, 1 \] and what dimensions of vectors and matrices are multipliable.
 
 ### stationary.py
 Simulates convergence of a Markov chain to its stationary distribution.
