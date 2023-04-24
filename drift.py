@@ -36,5 +36,5 @@ for i in range( int(iter) ):
 
 avg_M /= iter
 avg_num_positive /= iter
-print( 'Average value of M after', iter, 'runs =', avg_M )
-print( 'Average number of positive steps before reaching', threshold,'=', avg_num_positive )
+print( 'Average value of M after', iter, 'runs:', avg_M )
+print( 'Average number of positive steps before reaching S =', threshold,':', avg_num_positive )
