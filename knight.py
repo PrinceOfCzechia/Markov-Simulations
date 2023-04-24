@@ -25,7 +25,7 @@ class Knight():
         elif r < 0.625: return np.array( [ 1, 2 ] )
         elif r < 0.750: return np.array( [ 1, -2 ] )
         elif r < 0.875: return np.array( [ 2, 1 ] )
-        else: return np.array( [ 2, 1 ] )
+        else: return np.array( [ 2, -1 ] )
 
     def check_move( self ):
         global candidate
@@ -45,7 +45,7 @@ class Knight():
 
 
 b = Board()
-k = Knight( 3, 3, b )
+k = Knight( 7, 7, b )
 iter = 1e6
 
 for i in range( int(iter) ):
