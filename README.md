@@ -4,6 +4,8 @@ Numpy based simulations of Markov processes. Since the point is to demonstrate m
 ### stationary.py
 Simulates convergence of a Markov chain to its stationary distribution by multiplying an initial state vector with the chain's probability matrix. Iterates until a stationary state or iteration cap is reached.
 
+![Example output of *stationary.py*](img/stationary.png)
+
 ### drift.py
 Simulates a random walk which drifts to `-inf`. The user chooses *p*, probability of moving towards `inf`, the code returns the highest state reached, the average of this number among all iterations of the walk and how many steps in positive direction the walks took on average.
 
@@ -13,3 +15,5 @@ Simulates a random walk which drifts to `-inf`. The user chooses *p*, probabilit
 Simulates a random walk of a knight on a chessboard. Returns the number of visits on each square.
 
 ![Example output of *knight.py*](img/knight.png)
+
+Functionality to return a theoretical matrix and compare it against the empirical one is also implemented.
