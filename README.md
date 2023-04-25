@@ -7,5 +7,9 @@ Simulates convergence of a Markov chain to its stationary distribution.
 ### drift.py
 Simulates a random walk which drifts to `-inf`. The user chooses *p*, probability of moving towards `inf`, the code returns the highest state reached
 
+![Example output of *drift.py*](img/drift.png)
+
 ### knight.py
 Simulates a random walk of a knight on a chessboard.
+
+![Example output of *knight.py*](img/knight.png)
