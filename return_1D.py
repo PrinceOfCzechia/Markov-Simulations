@@ -18,7 +18,7 @@ class Walk:
         if self.position == 0: self.returns = np.append( self.returns, self.t[-1] )
 
 w = Walk()
-iter = 1e2
+iter = 1e5
 
 for i in range( int(iter) ):
     w.step()

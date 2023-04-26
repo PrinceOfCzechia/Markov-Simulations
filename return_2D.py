@@ -29,7 +29,7 @@ class Walk:
             self.returns = np.append( self.returns, self.t[-1] )
 
 w = Walk()
-iter = 1e2
+iter = 1e3
 
 for i in range( int(iter) ):
     w.step()
@@ -38,6 +38,8 @@ print( 'Returned', w.returns.shape[ 0 ] - 1, 'times' )
 print( 'Return times:', w.returns )
 
 #uncomment to see a plot of the walk
+'''
 plt.plot( w.x, w.y, 'bo-' )
 plt.plot( 0, 0, 'ro' )
 plt.show()
+'''

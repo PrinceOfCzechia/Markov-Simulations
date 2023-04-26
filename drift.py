@@ -35,7 +35,7 @@ for i in range( int(iter) ):
     avg_num_positive += walk.num_positive
     if walk.M > max_M: max_M = walk.M
 
-theoretical_M = walk.p / ( 1 - 2 * walk.p)
+theoretical_M = walk.p / ( 1 - 2 * walk.p) # p / ( q - p )
 
 avg_M /= iter
 avg_num_positive /= iter
