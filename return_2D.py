@@ -23,7 +23,6 @@ class Walk:
         else:
             self.x = np.append( self.x, self.x[ -1 ] )
             self.y = np.append( self.y, self.y[ -1 ] + 1 )
-
         self.t = np.append( self.t, self.t[ -1 ] + 1 )
 
         if self.x[ -1 ] == 0 and self.y[ -1 ] == 0:
@@ -40,4 +39,5 @@ print( 'Return times:', w.returns )
 
 #uncomment to see a plot of the walk
 plt.plot( w.x, w.y, 'bo-' )
+plt.plot( 0, 0, 'ro' )
 plt.show()
