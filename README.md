@@ -30,3 +30,13 @@ Explores the probability of a n-dimensional random walk returning to its startin
 | 5 | 0.135 |
 | 6 | 0.105 |
 | 7 | 0.086 |
+
+### Benchmarking
+The runtimes on a quadcore 10th gen i7 and 16 GB RAM are displayed in the following table.
+
+| Program | Iterations | Runtime |
+| ------- | -------- | -------- |
+| `drift.py` | 1e4 | 52 sec |
+| `knight.py` | 1e6 | 7 sec |
+| `return_1D.py` | 1e4 | 4 sec |
+| `return_2D.py` | 1e5 | 7 sec |
