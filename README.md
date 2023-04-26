@@ -16,7 +16,7 @@ Simulates a random walk of a knight on a chessboard. Returns the number of visit
 
 ![Example output of *knight.py*](img/knight.png)
 
-Functionality to return a theoretical matrix and compare it against the empirical one is also implemented.
+Functionality to return a theoretical matrix and compare it against the empirical one is also implemented. The comparison matrix shows percentage, where the theoretical matrix values are the baseline.
 
 ### return_nD.py
 Explores the probability of a n-dimensional random walk returning to its starting point. The return probabilities are roughly in the table below (for more information, see [mathworld](https://mathworld.wolfram.com/PolyasRandomWalkConstants.html)).
@@ -40,3 +40,5 @@ The runtimes on a quadcore 10th gen i7 and 16 GB RAM are displayed in the follow
 | `knight.py` | 1e6 | 7 sec |
 | `return_1D.py` | 1e4 | 4 sec |
 | `return_2D.py` | 1e5 | 7 sec |
+
+In all cases, a higher exponent resulted in well over a minute of computation time and does not really give any new information.
