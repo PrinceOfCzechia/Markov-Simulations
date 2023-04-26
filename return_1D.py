@@ -7,7 +7,7 @@ class Walk:
         self.position = 0
         self.t = np.array( [ 0 ] )
         self.x = np.array( [ 0 ] )
-        self.returns = np.empty( (1,1), dtype = int )
+        self.returns = np.array( [ 0 ] )
 
     def step( self ):
         p = rn.random()
@@ -18,16 +18,16 @@ class Walk:
         if self.position == 0: self.returns = np.append( self.returns, self.t[-1] )
 
 w = Walk()
-iter = 1e3
+iter = 1e2
 
 for i in range( int(iter) ):
     w.step()
 
-print( 'Returned', w.returns.shape[ 0 ], 'times' )
+print( 'Returned', w.returns.shape[ 0 ] - 1, 'times' )
 print( 'Return times:', w.returns )
 
-#uncomment for cool plots
+#uncomment to see a plot of the walk
 '''
-plt.plot( w.t, w.x, 'bo-' )
+plt.step( w.t, w.x, 'b-' )
 plt.show()
 '''
