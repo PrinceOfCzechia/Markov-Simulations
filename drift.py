@@ -16,15 +16,12 @@ class Drift:
         else: self.S += -1 # step towards -infty with probability 1-p
         if self.S > self.M: self.M = self.S
 
-    def reinit( self ):
-        self.S = 0
-        self.M = 0
 
 avg_M = 0
 max_M = 0
 avg_num_positive = 0
 
-iter = 1e4
+iter = 1e3
 threshold = -1000
 for i in range( int(iter) ):
     walk = Drift( 0.45 )
