@@ -11,14 +11,17 @@ class Walk:
 
     def step( self ):
         p = rn.random()
-        if p < 0.5:
-            self.x = np.append( self.x, self.x[ -1 ] - 1 ) 
-        else:
+        if p < 0.25:
+            self.x = np.append( self.x, self.x[ -1 ] - 1 )
+            self.y = np.append( self.y, self.y[ -1 ] )
+        elif p < 0.50:
             self.x = np.append( self.x, self.x[ -1 ] + 1 )
-        q = rn.random()
-        if q < 0.5:
-            self.y = np.append( self.y, self.y[ -1 ] - 1 ) 
+            self.y = np.append( self.y, self.y[ -1 ] )
+        elif p < 0.75:
+            self.x = np.append( self.x, self.x[ -1 ] )
+            self.y = np.append( self.y, self.y[ -1 ] - 1 )
         else:
+            self.x = np.append( self.x, self.x[ -1 ] )
             self.y = np.append( self.y, self.y[ -1 ] + 1 )
 
         self.t = np.append( self.t, self.t[ -1 ] + 1 )
