@@ -19,7 +19,7 @@ Simulates a random walk of a knight on a chessboard. Returns the number of visit
 Functionality to return a theoretical matrix and compare it against the empirical one is also implemented.
 
 ### return_nD.py
-Explores the probability of a n-dimensional random walk returning to its starting point. The return probabilities are roughly in the table below (for more information, see [mathworld](https://mathworld.wolfram.com/PolyasRandomWalkConstants.html))
+Explores the probability of a n-dimensional random walk returning to its starting point. The return probabilities are roughly in the table below (for more information, see [mathworld](https://mathworld.wolfram.com/PolyasRandomWalkConstants.html)).
 
 | Dimension | Return probability |
 | ----------- | ----------- |
