@@ -76,9 +76,10 @@ for i in range( 8 ):
     for j in range( 8 ):
         theoretical.board[ i ][ j ] = np.round( aux[ i ][ j ] / 336 * iter, 0 )
 
-print( 'Empirical:')
+print( '\nEmpirical:' )
 k.board.print()
-print( 'Theoretical:')
+print( 'Theoretical:' )
 theoretical.print()
-print( 'Comparison (Theoretical as a benchmark):')
+print( 'Comparison (Theoretical as a benchmark):' )
 contrast( theoretical, k.board ).print()
+print(' \n ')
