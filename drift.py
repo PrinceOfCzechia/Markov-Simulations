@@ -25,7 +25,7 @@ avg_M = 0
 max_M = 0
 avg_num_positive = 0
 
-iter = 1e3
+iter = 1e3 # max reasonable value is 1e4
 threshold = -1000
 for i in range( int(iter) ):
     drift = Drift( 0.45 )

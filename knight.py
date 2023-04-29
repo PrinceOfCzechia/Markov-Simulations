@@ -1,5 +1,6 @@
 import numpy as np
 import random as rn
+from matplotlib import pyplot as plt
 
 class Board:
     def __init__( self ):
@@ -55,7 +56,7 @@ class Knight():
 
 b = Board()
 k = Knight( 4, 4, b )
-iter = 1e6
+iter = 1e6 # max reasonable value is 1e6
 
 for i in range( int(iter) ):
     k.execute_move()
@@ -76,10 +77,19 @@ for i in range( 8 ):
     for j in range( 8 ):
         theoretical.board[ i ][ j ] = np.round( aux[ i ][ j ] / 336 * iter, 0 )
 
+benchmark = contrast( theoretical, k.board )
+
 print( '\nEmpirical:' )
 k.board.print()
 print( 'Theoretical:' )
 theoretical.print()
 print( 'Comparison (Theoretical as a benchmark):' )
-contrast( theoretical, k.board ).print()
+benchmark.print()
 print(' \n ')
+
+#uncomment for plots
+'''
+plt.matshow( benchmark.board )
+plt.colorbar()
+plt.show()
+'''

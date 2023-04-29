@@ -39,7 +39,12 @@ print( 'Return times:', w.returns )
 
 #uncomment to see a plot of the walk
 '''
+# simple
 plt.plot( w.x, w.y, 'bo-' )
 plt.plot( 0, 0, 'ro' )
 plt.show()
+'''
+'''
+# animated
+
 '''
