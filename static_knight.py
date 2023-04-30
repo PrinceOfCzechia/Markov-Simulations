@@ -78,7 +78,9 @@ print( 'Comparison to median of the empirical:' )
 theoretical.print()
 print(' \n ')
 
-#uncomment for plots
+# uncomment for plots
+'''
 plt.matshow( benchmark.board )
 plt.colorbar()
 plt.show()
+'''
