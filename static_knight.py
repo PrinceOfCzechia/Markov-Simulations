@@ -1,0 +1,84 @@
+import numpy as np 
+import random as rn
+from matplotlib import pyplot as plt
+
+class Board:
+    def __init__( self ):
+        self.board = np.zeros( ( 8, 8 ) )
+
+    def print( self ):
+        print( self.board )
+
+    def add( self, row, col ):
+        self.board[row, col] += 1
+
+def contrast( benchmark: Board, another: Board ):
+    result = Board()
+    for i in range( 8 ):
+        for j in range( 8 ):
+            result.board[ i ][ j ] = np.round( another.board[ i ][ j ] / benchmark.board[ i ][ j ], 2 )
+    return result
+
+
+
+class Static_Knight():
+    def __init__( self, row, col, board: Board ):
+        self.position = np.array( [ row, col ] )
+        self.board = board
+
+    def generate_move( self ):
+        r = rn.random()
+        if r < 0.125: return np.array( [ -2, 1 ] )
+        elif r < 0.250: return np.array( [ -2, -1 ] )
+        elif r < 0.375: return np.array( [ -1, 2 ] )
+        elif r < 0.500: return np.array( [ -1, -2 ] )
+        elif r < 0.625: return np.array( [ 1, 2 ] )
+        elif r < 0.750: return np.array( [ 1, -2 ] )
+        elif r < 0.875: return np.array( [ 2, 1 ] )
+        else: return np.array( [ 2, -1 ] )
+
+    def check_move( self ):
+        global candidate
+        candidate = self.generate_move()
+        if self.position[ 0 ] + candidate[ 0 ] >= 0 and \
+           self.position[ 0 ] + candidate[ 0 ] < 8 and \
+           self.position[ 1 ] + candidate[ 1 ] >= 0 and \
+           self.position[ 1 ] + candidate[ 1 ] < 8 :
+            return True
+        else: return False
+
+    def execute_move( self ):
+        while not self.check_move():
+            self.board.add( self.position[ 0 ], self.position[ 1 ] )
+            self.check_move()
+        self.position += candidate
+        self.board.add( self.position[ 0 ], self.position[ 1 ] )
+
+
+b = Board()
+sk = Static_Knight( 4, 4, b )
+iter = 1e6 # max reasonable value is 1e6
+
+for i in range( int(iter) ):
+    sk.execute_move()
+
+aux = np.full( ( 8, 8 ), np.median( sk.board.board ) )
+
+theoretical = Board()
+for i in range( 8 ):
+    for j in range( 8 ):
+        theoretical.board[ i ][ j ] = np.round( aux[ i ][ j ], 0 )
+
+benchmark = contrast( theoretical, sk.board )
+
+
+print( '\nEmpirical:' )
+sk.board.print()
+print( 'Comparison to median of the empirical:' )
+theoretical.print()
+print(' \n ')
+
+#uncomment for plots
+plt.matshow( benchmark.board )
+plt.colorbar()
+plt.show()
