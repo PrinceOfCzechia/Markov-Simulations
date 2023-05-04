@@ -6,19 +6,19 @@ class Walk:
         self.x = np.zeros( 1 )
         self.y = np.zeros( 1 )
         self.z = np.zeros( 1 )
-        self.u = np.zeros( 1 )
+        self.t = np.zeros( 1 )
 
     def reinit( self ):
         self.x = np.zeros( 1 )
         self.y = np.zeros( 1 )
         self.z = np.zeros( 1 )
-        self.u = np.zeros( 1 )
+        self.t = np.zeros( 1 )
 
-    def step( self, x, y, z, u ):
+    def step( self, x, y, z, t ):
         self.x = np.append( self.x, self.x[ -1 ] + x )
         self.y = np.append( self.y, self.y[ -1 ] + y )
         self.z = np.append( self.z, self.z[ -1 ] + z )
-        self.u = np.append( self.u, self.u[ -1 ] + u )
+        self.t = np.append( self.t, self.t[ -1 ] + t )
 
     def eval( self ):
         p = rn.random()
@@ -52,7 +52,7 @@ for i in range( int(walk_count) ):
         if w.x[-1] == 0:
             if w.y[-1] == 0:
                 if w.z[-1] == 0:
-                    if w.u[-1] == 0:
+                    if w.t[-1] == 0:
                         num_returns += 1
                         break
 
