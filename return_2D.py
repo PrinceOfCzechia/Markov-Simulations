@@ -34,19 +34,25 @@ iter = 1e2
 
 for i in range( int(iter) ):
     w.eval()
+    # animated plot
+    '''
+    plt.xlim( -20, 20 )
+    plt.ylim( -20, 20 )
+    plt.plot( w.x, w.y, 'bo-' )
+    plt.plot( 0, 0, 'ro' )
+    plt.plot( w.x[-1], w.y[-1], 'yo' )
+    plt.pause( 0.2 )
+
+plt.show()
+'''
 
 print( 'Returned', w.returns.shape[ 0 ] - 1, 'times' )
 print( 'Return times:', w.returns )
 
-#uncomment to see a plot of the walk
 
-# simple
+# static plot
 '''
 plt.plot( w.x, w.y, 'bo-' )
 plt.plot( 0, 0, 'ro' )
 plt.show()
-'''
-'''
-# animated
-
 '''
