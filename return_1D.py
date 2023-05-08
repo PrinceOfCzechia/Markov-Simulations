@@ -24,7 +24,7 @@ class Walk:
         self.returns = np.array( [ 0 ] )
 
 w = Walk()
-iter = 1e2
+iter = 1e5
 
 for i in range( int(iter) ):
     w.step()
@@ -33,9 +33,19 @@ print( 'Returned', w.returns.shape[ 0 ] - 1, 'times' )
 print( 'Return times:', w.returns )
 
 #uncomment to see a plot of the walk
+'''
 plt.step( w.t, w.x, 'b-' )
 for val in np.nditer( w.returns ):
     plt.plot( val, 0, 'ro' )
     plt.text( val, 0, str(val), horizontalalignment = 'center',
               fontweight = 'demi', fontstretch = 'ultra-condensed' )
 plt.show()
+'''
+
+c = w.returns.shape[0] - 1
+return_times = np.empty( c )
+for i in range( c ):
+    return_times[ i ] = w.returns[ i+1 ] - w.returns[ i ]
+
+print( return_times )
+print( 'Average return time T =', np.average( return_times ) )
