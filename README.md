@@ -39,7 +39,7 @@ Explores the probability of a n-dimensional random walk returning to its startin
 ### 1D_distribution.py
 Simulates a number of random walks on integers, starting at zero, with a fix amount of steps per walk. Returns an array of times each number was wisited.
 
-![Example output of *1D_distribution.py*](img/1D_distribution.png)
+![Example output of *1D_distribution.py*](img/1d_distribution.png)
 
 ### Benchmarking
 The runtimes on a quadcore 10th gen i7 and 16 GB RAM are displayed in the following table.
