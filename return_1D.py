@@ -17,6 +17,12 @@ class Walk:
         self.x = np.append( self.x, self.position )
         if self.position == 0: self.returns = np.append( self.returns, self.t[-1] )
 
+    def reinit( self ):
+        self.position = 0
+        self.t = np.array( [ 0 ] )
+        self.x = np.array( [ 0 ] )
+        self.returns = np.array( [ 0 ] )
+
 w = Walk()
 iter = 1e2
 
