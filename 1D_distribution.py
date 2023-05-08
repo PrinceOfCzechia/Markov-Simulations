@@ -22,8 +22,8 @@ class Walk:
 
 w = Walk()
 
-walk_count = 1e4
-iter = 2
+walk_count = 1e3
+iter = 50
 histogram = np.zeros( 2*iter + 1 )
 
 for j in range( int(walk_count) ):
@@ -33,6 +33,5 @@ for j in range( int(walk_count) ):
     w.reinit()
 
 print( histogram )
-
-plt.hist( histogram, bins = 2*iter + 1 )
+plt.bar( np.linspace( -iter, iter, 2*iter + 1), histogram, width = 1, color = 'green' )
 plt.show()
