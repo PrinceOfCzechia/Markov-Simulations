@@ -24,7 +24,7 @@ class Walk:
         self.returns = np.array( [ 0 ] )
 
 w = Walk()
-iter = 1e5
+iter = 1e4
 
 for i in range( int(iter) ):
     w.step()
